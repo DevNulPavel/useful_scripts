@@ -102,7 +102,7 @@ PROMPT="%{$fg[magenta]%}#############################################%{$reset_co
 %{$fg[cyan]%}%n@%m%{$reset_color%}: 
 %{$fg[magenta]%}#%{$reset_color%} \
 %{$terminfo[bold]$fg[yellow]%}%~%{$reset_color%} 
-%{$terminfo[bold]$fg[green]%}%(!.#.$)%{$reset_color%} "
+%{$terminfo[bold]$fg[red]%}%(!.#.$)%{$reset_color%} "
 
 ########################################################################
 
