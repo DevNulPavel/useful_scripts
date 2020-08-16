@@ -1,7 +1,7 @@
 ########################################################################
 # Install before:
 # sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-# curl -L git.io/antigen > .antigen.zsh
+# curl -L git.io/antigen > ~/.antigen.zsh
 
 # Plugins list:
 # https://github.com/unixorn/awesome-zsh-plugins
@@ -64,6 +64,9 @@ antigen apply
 
 # Skim search (ZFZ analogue)
 # Файлы нужно скачать из https://github.com/lotabout/skim/tree/master/shell
+# mkdir -p ~/.skim
+# curl -L https://raw.githubusercontent.com/lotabout/skim/master/shell/key-bindings.zsh > ~/.skim/key-bindings.zsh
+# curl -L https://raw.githubusercontent.com/lotabout/skim/master/shell/completion.zsh > ~/.skim/completion.zsh
 [ -f ~/.skim/key-bindings.zsh ] && source ~/.skim/key-bindings.zsh
 [ -f ~/.skim/completion.zsh ] && source ~/.skim/completion.zsh
 
@@ -97,12 +100,10 @@ eval $(thefuck --alias)
 # %{$fg[white]%}[%*]%{$reset_color%}
 # %{$fg[blue]%}---------------------%{$reset_color%}
 # %{$fg[cyan]%}(%n@%m)%{$reset_color%} 
-PROMPT="%{$fg[magenta]%}#############################################%{$reset_color%} 
-%{$fg[magenta]%}#%{$reset_color%} \
-%{$fg[cyan]%}%n@%m%{$reset_color%}: 
-%{$fg[magenta]%}#%{$reset_color%} \
+PROMPT="%{$fg[magenta]%}#####################################################%{$reset_color%} 
+%{$fg[blue]%}%n@%m%{$reset_color%}: \
 %{$terminfo[bold]$fg[yellow]%}%~%{$reset_color%} 
-%{$terminfo[bold]$fg[red]%}%(!.#.$)%{$reset_color%} "
+%{$terminfo[bold]$fg[red]%}->%{$reset_color%} "
 
 ########################################################################
 
