@@ -101,7 +101,7 @@ eval $(thefuck --alias)
 # %{$fg[blue]%}---------------------%{$reset_color%}
 # %{$fg[cyan]%}(%n@%m)%{$reset_color%} 
 PROMPT="%{$fg[magenta]%}#####################################################%{$reset_color%} 
-%{$fg[blue]%}%n@%m%{$reset_color%}: \
+%{$fg[cyan]%}%n@%m%{$reset_color%}: \
 %{$terminfo[bold]$fg[yellow]%}%~%{$reset_color%} 
 %{$terminfo[bold]$fg[red]%}->%{$reset_color%} "
 
