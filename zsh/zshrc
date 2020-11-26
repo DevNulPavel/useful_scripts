@@ -71,7 +71,7 @@ antigen apply
 [ -f ~/.skim/completion.zsh ] && source ~/.skim/completion.zsh
 
 # Утилита fuck
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 
 ########################################################################
 
@@ -104,6 +104,28 @@ PROMPT="%{$fg[magenta]%}#####################################################%{$
 %{$fg[cyan]%}%n@%m%{$reset_color%}: \
 %{$terminfo[bold]$fg[yellow]%}%~%{$reset_color%} 
 %{$terminfo[bold]$fg[red]%}->%{$reset_color%} "
+
+########################################################################
+
+# https://www.netmeister.org/blog/keychain-passwords.html ###
+# https://gist.github.com/bmhatfield/f613c10e360b4f27033761bbee4404fd
+
+# Use: get_osx_keychain_variable SECRET_ENV_VAR
+# Example: export AWS_ACCESS_KEY_ID=$(get_osx_keychain_variable AWS_ACCESS_KEY_ID);
+function get_osx_keychain_variable() {
+    security find-generic-password -w -a ${USER} -D "environment variable" -s "${1}"
+}
+
+# Use: set_osx_keychain_variable SECRET_ENV_VAR
+function set_osx_keychain_variable() {
+    [ -n "$1" ] || print "Missing environment variable name"
+    
+    # Note: if using bash, use `-p` to indicate a prompt string, rather than the leading `?`
+    read -s "?Enter Value for ${1}: " secret
+    
+    ( [ -n "$1" ] && [ -n "$secret" ] ) || return 1
+    security add-generic-password -U -a ${USER} -D "environment variable" -s "${1}" -w "${secret}"
+}
 
 ########################################################################
 
