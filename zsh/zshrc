@@ -20,7 +20,6 @@ antigen bundle brew
 antigen bundle branch
 antigen bundle xcode
 antigen bundle vscode
-antigen bundle tmux 
 antigen bundle rustup 
 antigen bundle rust 
 antigen bundle colorize
