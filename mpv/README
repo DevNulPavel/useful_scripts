@@ -1,1 +1,5 @@
-Files path: ~/.config/mpv/
+Files path: 
+~/.config/mpv/
+
+Execute:
+mkdir -p ~/.config/mpv/

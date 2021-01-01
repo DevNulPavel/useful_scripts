@@ -1,0 +1,5 @@
+Files path: 
+~/.ccache/ccache.conf
+
+Execute:
+mkdir -p ~/.ccache/
