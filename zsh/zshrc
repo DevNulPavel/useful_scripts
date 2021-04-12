@@ -2,6 +2,7 @@
 # Install before:
 # 1. sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # 2. curl -L git.io/antigen > ~/.antigen.zsh
+# 3. brew install fzf
 
 # Plugins list:
 # https://github.com/unixorn/awesome-zsh-plugins
@@ -28,7 +29,7 @@ antigen bundle sudo
 antigen bundle gradle
 antigen bundle python
 antigen bundle pod
-antigen bundle zpm-zsh/clipboard
+antigen bundle fzf
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
@@ -49,8 +50,8 @@ antigen apply
 # mkdir -p ~/.skim
 # curl -L https://raw.githubusercontent.com/lotabout/skim/master/shell/key-bindings.zsh > ~/.skim/key-bindings.zsh
 # curl -L https://raw.githubusercontent.com/lotabout/skim/master/shell/completion.zsh > ~/.skim/completion.zsh
-[ -f ~/.skim/key-bindings.zsh ] && source ~/.skim/key-bindings.zsh
-[ -f ~/.skim/completion.zsh ] && source ~/.skim/completion.zsh
+# [ -f ~/.skim/key-bindings.zsh ] && source ~/.skim/key-bindings.zsh
+# [ -f ~/.skim/completion.zsh ] && source ~/.skim/completion.zsh
 
 ########################################################################
 
@@ -110,112 +111,5 @@ function set_osx_keychain_variable() {
 alias x86='arch -x86_64'
 alias von='vpn_on_murm.sh'
 alias voff='vpn_off.sh'
-
-########################################################################
-
-# VSCode
-# export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin":$PATH
-
-# Default editor
-export EDITOR=subl
-
-# Homebrew + User bin
-export PATH=$HOME/bin:/opt/homebrew/bin:$PATH
-
-# Rust
-export PATH=$HOME/.cargo/bin:$PATH
-# export RUSTC_WRAPPER=/usr/local/bin/sccache
-# export SCCACHE_DIR=$HOME/sccache
-# export SCCACHE_CACHE_SIZE=2G
-
-# Go
-export GOPATH=$HOME/go
-export PATH=$HOME/go/bin:$PATH
-
-# Android
-#export ANDROID_SDK $HOME/AndroidSDK
-export ANDROID_SDK=$HOME/android_sdk_studio
-export ANDROID_SDK_ROOT=$ANDROID_SDK
-export ANDROID_HOME=$ANDROID_SDK
-export ANDROID_NDK=$HOME/android_ndk_21
-#export ANDROID_NDK=/usr/local/opt/AndroidNDK_21
-#export ANDROID_NDK=$HOME/android_sdk_studio/ndk-bundle
-export ANDROID_NDK_ROOT=$ANDROID_NDK
-export ANDROID_NDK_HOME=$ANDROID_NDK
-export NDK_ROOT=$ANDROID_NDK
-export NDK_HOME=$ANDROID_NDK
-export PATH=$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$ANDROID_SDK:$ANDROID_NDK:$PATH
-
-# Brew C include paths
-# export C_INCLUDE_PATH=$C_INCLUDE_PATH /usr/local/include
-# export C_INCLUDE_PATH=$C_INCLUDE_PATH /usr/local/opt
-
-# Brew  C++ include paths
-# export CPLUS_INCLUDE_PATH $C_INCLUDE_PATH
-
-# Brew libs path
-export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
-
-# Vulkan
-export VULKAN_SDK=$HOME/vulkan_sdk/macOS
-export PATH=$VULKAN_SDK/bin:$PATH
-
-# PVR
-# export PATH $PATH '/Applications/Imagination/PowerVR_Graphics/PowerVR_Tools/PVRTexTool/CLI/OSX_x86/'
-
-####################################
-# Переменные с использованием emsdk (legacy) (Вроде как стабильная версия: ./emsdk install 1.38.48-fastcomp && ./emsdk activate 1.38.48-fastcomp)
-####################################
-# export EMSDK_PATH="$HOME/projects/emsdk"
-# export LLVM_ROOT="$HOME/projects/emsdk/fastcomp/fastcomp/bin"
-# export BINARYEN_ROOT="$HOME/projects/emsdk/fastcomp"
-# export EMSCRIPTEN_ROOT="$HOME/projects/emsdk/fastcomp/emscripten"
-# export EMSCRIPTEN_NATIVE_OPTIMIZER="$HOME/projects/emsdk/fastcomp/bin/optimizer"
-# export NODE_JS="$HOME/projects/emsdk/node/8.9.1_64bit/bin/node"
-# export EMSCRIPTEN_PATH="$HOME/projects/emsdk/fastcomp/emscripten"
-# export FASTCOMP_PATH="$HOME/projects/emsdk/fastcomp"
-# export PVRCLI_PATH="/Applications/Imagination/PowerVR_Graphics/PowerVR_Tools/PVRTexTool/CLI/OSX_x86"
-# export PATH=$EMSCRIPTEN_PATH:$EMSCRIPTEN_PATH/tools:$PVRCLI_PATH:$EMSDK_PATH/node/12.9.1_64bit/bin:$PATH
-# export LLVM=$FASTCOMP_PATH
-# export EMSCRIPTEN=$EMSCRIPTEN_PATH
-# export EMSDK=$EMSDK_PATH
-
-####################################
-# Переменные с использованием emsdk (latest LLVM, раньше назывался upstream) (Вроде как стабильная версия: ./emsdk install 1.38.48-upstream && ./emsdk activate 1.38.48-upstream)
-####################################
-# export EMSDK_PATH="$HOME/projects/emsdk"
-# export LLVM_ROOT="$HOME/projects/emsdk/upstream/bin"
-# export BINARYEN_ROOT="$HOME/projects/emsdk/upstream"
-# export EMSCRIPTEN_ROOT="$HOME/projects/emsdk/upstream/emscripten"
-# export EMSCRIPTEN_PATH="$HOME/projects/emsdk/upstream/emscripten"
-# export NODE_JS="$HOME/projects/emsdk/node/8.9.1_64bit/bin/node"
-# export PVRCLI_PATH="/Applications/Imagination/PowerVR_Graphics/PowerVR_Tools/PVRTexTool/CLI/OSX_x86"
-# export PATH=$EMSCRIPTEN_PATH:$EMSCRIPTEN_PATH/tools:$PVRCLI_PATH:$EMSDK_PATH/node/8.9.1_64bit/bin:$PATH
-# export EMSCRIPTEN=$EMSCRIPTEN_PATH
-# export EMSDK=$EMSDK_PATH
-
-####################################
-# Переменные с использованием emsdk (latest LLVM, раньше назывался upstream) (Вроде как стабильная версия: ./emsdk update-tags && ./emsdk install 1.39.6 && ./emsdk activate 1.39.6)
-####################################
-export EMSDK_PATH="$HOME/projects/emsdk"
-export LLVM="$HOME/projects/emsdk/upstream/bin"
-export LLVM_ROOT="$HOME/projects/emsdk/upstream/bin"
-export BINARYEN="$HOME/projects/emsdk/upstream"
-export BINARYEN_ROOT="$HOME/projects/emsdk/upstream"
-export EMSCRIPTEN_ROOT="$HOME/projects/emsdk/upstream/emscripten"
-export EMSCRIPTEN_PATH="$HOME/projects/emsdk/upstream/emscripten"
-export NODE_JS="$HOME/projects/emsdk/node/8.9.1_64bit/bin/node"
-export PVRCLI_PATH="/Applications/Imagination/PVRTexTool/CLI/OSX_x86"
-export PATH=$EMSCRIPTEN_PATH:$EMSCRIPTEN_PATH/tools:$PVRCLI_PATH:$EMSDK_PATH/node/8.9.1_64bit/bin:$PATH
-export EMSCRIPTEN=$EMSCRIPTEN_PATH
-export EMSDK=$EMSDK_PATH
-
-# Convert tools pathes test
-# export PVR_TOOL_PATH '/Applications/Imagination/PowerVR_Graphics/PowerVR_Tools/PVRTexTool/CLI/OSX_x86/PVRTexToolCLI'
-# export FFMPEG_TOOL_PATH '/usr/local/bin/ffmpeg'
-# export WEBP_TOOL_PATH '/usr/local/bin/cwebp'
-
-# XGEN
-export XGEN_ENABLE_DISTCC=false
-export XGEN_ENABLE_CCACHE=true
-export XGEN_XCODE_DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer"
+alias vof='vpn_off.sh'
+alias vst='vpn_status.sh'
