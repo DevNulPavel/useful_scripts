@@ -14,6 +14,8 @@ services:
     container_name: admin
     image: dpage/pgadmin4:latest
     restart: always
+    links:
+      - postgres
     environment:
       PGADMIN_DEFAULT_EMAIL: devnulpave@gmail.com
       PGADMIN_DEFAULT_PASSWORD: pg
