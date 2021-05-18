@@ -84,11 +84,25 @@ export PATH=$VULKAN_SDK/bin:$PATH
 ####################################
 # Переменные с использованием emsdk (latest LLVM, раньше назывался upstream) (Вроде как стабильная версия: ./emsdk update-tags && ./emsdk install 1.39.3 && ./emsdk activate 1.39.3)
 ####################################
+# export EMSDK_PATH="$HOME/projects/emsdk"
+# export LLVM="$HOME/projects/emsdk/upstream/bin"
+# export LLVM_ROOT="$HOME/projects/emsdk/upstream/bin"
+# export BINARYEN="$HOME/projects/emsdk/upstream"
+# export BINARYEN_ROOT="$HOME/projects/emsdk/upstream"
+# export EMSCRIPTEN_ROOT="$HOME/projects/emsdk/upstream/emscripten"
+# export EMSCRIPTEN_PATH="$HOME/projects/emsdk/upstream/emscripten"
+# export NODE_JS="$HOME/projects/emsdk/node/8.9.1_64bit/bin/node"
+# export PVRCLI_PATH="/Applications/Imagination/PVRTexTool/CLI/OSX_x86"
+# export PATH=$EMSCRIPTEN_PATH:$EMSCRIPTEN_PATH/tools:$PVRCLI_PATH:$EMSDK_PATH/node/8.9.1_64bit/bin:$PATH
+# export EMSCRIPTEN=$EMSCRIPTEN_PATH
+# export EMSDK=$EMSDK_PATH
+
+####################################
+# Переменные с использованием emsdk (latest LLVM, раньше назывался upstream) (Вроде как стабильная версия: ./emsdk update-tags && ./emsdk install 2.0.20 && ./emsdk activate 2.0.20)
+####################################
 export EMSDK_PATH="$HOME/projects/emsdk"
-export LLVM="$HOME/projects/emsdk/upstream/bin"
-export LLVM_ROOT="$HOME/projects/emsdk/upstream/bin"
-export BINARYEN="$HOME/projects/emsdk/upstream"
-export BINARYEN_ROOT="$HOME/projects/emsdk/upstream"
+export EM_LLVM_ROOT="$HOME/projects/emsdk/upstream/bin"
+export EM_BINARYEN_ROOT="$HOME/projects/emsdk/upstream"
 export EMSCRIPTEN_ROOT="$HOME/projects/emsdk/upstream/emscripten"
 export EMSCRIPTEN_PATH="$HOME/projects/emsdk/upstream/emscripten"
 export NODE_JS="$HOME/projects/emsdk/node/8.9.1_64bit/bin/node"
